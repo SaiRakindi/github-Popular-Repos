@@ -30,10 +30,10 @@ class GithubPopularRepos extends Component {
   }
 
   componentDidMount() {
-    this.getRepositories()
+    this.getRepositoriesData()
   }
 
-  getRepositories = async () => {
+  getRepositoriesData = async () => {
     const {activeLanguageFilter} = this.state
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
@@ -108,7 +108,7 @@ class GithubPopularRepos extends Component {
   }
 
   clickLanguageFilter = newFilterId => {
-    this.setState({activeLanguageFilter: newFilterId}, this.getRepositories)
+    this.setState({activeLanguageFilter: newFilterId}, this.getRepositoriesData)
   }
 
   renderLanguageFiltersList = () => {
